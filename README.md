@@ -1,5 +1,5 @@
 this project demonstrates that file system events are not propigating to the
-containers in Docker for Mac.
+containers in Docker for Mac when using Swarm Mode.
 
 ## requirements
 
@@ -11,7 +11,7 @@ containers in Docker for Mac.
 
 The following snippet runs a container with the `docker run` command, binding
 the local `watch` directory to `/opt/watch` in the container then starting
-`inotifywait` on it.
+`inotifywait` on it.  This works.
 
 ```bash
 cd docker_run
@@ -21,7 +21,7 @@ cd docker_run
 ## example of file system events *NOT* working
 
 This snippet runs a the same image  with the `docker service create` command,
-but uses the `--bind` flags instead of `--volume`.
+but uses the `--bind` flags instead of `--volume`.  This does not work.
 
 ```bash
 cd docker_swarm
