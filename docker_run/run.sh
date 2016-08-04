@@ -2,8 +2,8 @@
 
 set -e
 
-docker build -t inotify .
-docker run -d --name=docker_run -v $(pwd)/watch:/opt/watch inotify
+docker build -t inotifywait .
+docker run -d --name=docker_run -v $(pwd)/watch:/opt/watch inotifywait
 
 for i in {1..10}; do echo $i > watch/$i.txt; done
 
